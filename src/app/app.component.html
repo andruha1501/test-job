@@ -1,0 +1,16 @@
+<div class="wrap">
+  <mat-card class="card">
+    <mat-form-field class="card__field">
+      <input matInput placeholder="PIN" type="{{typeField}}" [(ngModel)]="pin" >
+      <mat-icon class="hide-pin" (click)="hidePin()">remove_red_eye</mat-icon>
+    </mat-form-field>
+    <div class="card__button-wrap">
+      <button disableRipple *ngFor="let key of keys" mat-raised-button color="primary" class="card__button" (click)="getKey(key)" >{{key}}</button>
+    </div>  
+    <div class="additional-panel">
+      <button mat-raised-button color="warn" class="additional-panel__button" (click)="onCansel()">Cancel</button>
+      <button mat-raised-button color="warn" class="additional-panel__button" (click)="onClear()">Clear</button>
+      <button mat-raised-button color="warn" class="additional-panel__button" (click)="onEnter()">Enter</button>
+    </div>
+  </mat-card> 
+</div>
